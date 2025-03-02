@@ -1,4 +1,3 @@
-# main.py
 import time
 import threading
 import logging
@@ -10,17 +9,11 @@ from logger_config import setup_logger
 def main():
     setup_logger()
     bot_handler = TelegramBotHandler(config.BOT_TOKEN)
-    cam_urls = [
-        (config.CAM_URL1, 1),
-        (config.CAM_URL2, 2),
-        (config.CAM_URL3, 3),
-        (config.CAM_URL4, 4),
-        (config.CAM_URL5, 5),
-        (config.CAM_URL6, 6)
-    ]
     processors = []
-    for cam_url, cam_id in cam_urls:
-        processor = VideoProcessor(cam_url, bot_handler, cam_id)
+    
+    # Для каждого URL из списка CAM_URLS создаём процессор
+    for idx, cam_url in enumerate(config.CAM_URLS, start=1):
+        processor = VideoProcessor(cam_url, bot_handler, cam_id=idx)
         processors.append(processor)
 
     bot_thread = threading.Thread(target=bot_handler.start_bot)
