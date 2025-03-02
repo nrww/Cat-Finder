@@ -1,0 +1,65 @@
+# Игнорируем стандартные файлы Python
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+
+# Виртуальное окружение
+venv/
+env/
+.venv/
+
+# Конфигурационные и средовые файлы
+.env
+*.env
+config.yaml
+secrets.json
+
+# Кеши и временные файлы
+*.log
+*.out
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook временные файлы
+.ipynb_checkpoints/
+
+# ML-модели и артефакты
+models/
+checkpoints/
+*.h5
+*.hdf5
+*.pkl
+*.joblib
+*.pt
+*.onnx
+*.tflite
+
+# Данные (если не в Git LFS)
+data/
+*.csv
+*.json
+*.xml
+*.zip
+*.tar.gz
+*.parquet
+*.dat
+
+# TensorBoard логи
+logs/
+runs/
+
+# Кеши ML-фреймворков
+__pycache__/
+*.npy
+*.npz
+*.pkl
+
+# PyCharm и VS Code файлы
+.vscode/
+.idea/
+*.swp
+
+# Docker
+docker-compose.override.yml
